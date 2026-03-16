@@ -1,0 +1,8 @@
+term,definition
+Patient,Individual receiving medical service
+Appointment,Scheduled visit to a healthcare provider
+Scheduled Day,Date when the appointment was booked
+Appointment Day,Date when the patient is expected to attend
+No Show,Patient who did not attend the appointment
+Data Quality,Measure of how accurate and reliable the data is
+Data Governance,Framework for managing data quality, accountability and documentation
