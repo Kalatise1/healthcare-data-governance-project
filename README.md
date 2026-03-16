@@ -1,35 +1,36 @@
-Healthcare Data Governance and Data Quality Monitoring Project
-Project Overview
+# Healthcare Data Governance and Data Quality Monitoring Project
+
+## Project Overview
 
 This project demonstrates how organizations can monitor and improve the quality of their data.
 
-In many industries such as healthcare, banking, and government services, data is a critical asset. Decisions about patients, operations, and policies rely heavily on accurate and reliable information. Because of this, organizations invest in data governance, which is the process of ensuring that data is accurate, well documented, and properly managed.
+In many industries such as healthcare, banking, and government services, data is a critical asset. Decisions about patients, operations, and policies rely heavily on accurate and reliable information. Because of this, organizations invest in **data governance**, which is the process of ensuring that data is accurate, well documented, and properly managed.
 
-This project simulates the type of work a Data Governance Analyst might perform in a healthcare environment. It shows how data quality can be monitored, how data issues can be identified, and how governance documentation helps teams understand and trust their data.
+This project simulates the type of work a **Data Governance Analyst** might perform in a healthcare environment. It shows how data quality can be monitored, how data issues can be identified, and how governance documentation helps teams understand and trust their data.
 
-The system uses SQL, SQLite, Python, and Power BI to analyze and monitor healthcare appointment data.
+The system uses **SQL, SQLite, Python, and Power BI** to analyze and monitor healthcare appointment data.
 
-Dataset Overview
+---
+
+# Dataset Overview
 
 The dataset used in this project contains healthcare appointment records. Each row represents a scheduled appointment for a patient.
 
 The data includes information about:
 
-Patient identifiers
+- Patient identifiers  
+- Appointment scheduling dates  
+- Patient demographics  
+- Medical indicators such as hypertension and diabetes  
+- Whether the patient attended the appointment or not  
 
-Appointment scheduling dates
-
-Patient demographics
-
-Medical indicators such as hypertension and diabetes
-
-Whether the patient attended the appointment or not
-
-The dataset contains 110,527 appointment records.
+The dataset contains **110,527 appointment records**.
 
 Monitoring datasets like this is important because healthcare organizations rely on this information to manage patient care and operational planning.
 
-Data Quality Monitoring
+---
+
+# Data Quality Monitoring
 
 One of the main goals of this project is to identify potential problems in the data.
 
@@ -37,134 +38,74 @@ Several data quality checks were performed using SQL queries. These checks help 
 
 Examples of checks performed include:
 
-Checking for missing patient identifiers
-
-Identifying unrealistic age values
-
-Detecting appointment dates that occur in the future
-
-Checking for duplicate appointment identifiers
+- Checking for missing patient identifiers  
+- Identifying unrealistic age values  
+- Detecting appointment dates that occur in the future  
+- Checking for duplicate appointment identifiers  
 
 These checks simulate the type of monitoring activities that data governance teams perform to ensure that organizational data remains trustworthy.
 
-Data Quality Results
+---
+
+# Data Quality Results
 
 The analysis produced the following results.
 
-Metric	Result
-Total Appointments	110,527
-Missing Patient IDs	0
-Invalid Age Records	1
-Future Appointment Dates	0
-Duplicate Appointment IDs	0
-What These Results Mean
-Total Appointments
+| Metric | Result |
+|------|------|
+| Total Appointments | 110,527 |
+| Missing Patient IDs | 0 |
+| Invalid Age Records | 1 |
+| Future Appointment Dates | 0 |
+| Duplicate Appointment IDs | 0 |
 
-The dataset contains 110,527 records, representing the total number of healthcare appointments monitored in this project.
+---
 
-Missing Patient IDs
+# What These Results Mean
+
+## Total Appointments
+
+The dataset contains **110,527 records**, representing the total number of healthcare appointments monitored in this project.
+
+## Missing Patient IDs
 
 No missing patient identifiers were detected. This means every appointment record is linked to a patient, which is important for accurate tracking of healthcare services.
 
-Invalid Age Records
+## Invalid Age Records
 
 One record contains an unrealistic age value. This could be caused by manual entry errors or data processing issues.
 
 To prevent this type of issue, organizations typically implement validation rules that ensure patient ages fall within reasonable ranges.
 
-Future Appointment Dates
+## Future Appointment Dates
 
 No appointments were recorded with dates that occur in the future relative to the system date. This indicates that the appointment scheduling data is consistent.
 
-Duplicate Appointment IDs
+## Duplicate Appointment IDs
 
 No duplicate appointment identifiers were found, meaning each appointment record is uniquely identified.
 
-Data Quality Monitoring Dashboard
+---
 
-The results of the data quality checks were visualized using Power BI to simulate a monitoring dashboard used by data governance teams.
+# Data Quality Monitoring Dashboard
+
+The results of the data quality checks were visualized using **Power BI** to simulate a monitoring dashboard used by data governance teams.
 
 This dashboard helps stakeholders quickly understand the health of the dataset by highlighting important data quality indicators.
 
-Automated Data Quality Pipeline
+![Healthcare Data Quality Dashboard](dashboards/healthcare_dq_dashboard.png)
+
+---
+
+# Automated Data Quality Pipeline
 
 A Python script was created to automate the data quality monitoring process.
 
 The script performs the following tasks:
 
-Connects to the healthcare database
-
-Runs data quality validation checks
-
-Collects the results of those checks
-
-Saves the results to a monitoring file
+- Connects to the healthcare database  
+- Runs data quality validation checks  
+- Collects the results of those checks  
+- Saves the results to a monitoring file  
 
 The output file generated by this process is:
-
-dashboards/dq_metrics_snapshot.csv
-
-This file contains the latest data quality metrics and serves as the data source for the monitoring dashboard.
-
-Metadata and Governance Documentation
-
-In addition to checking data quality, organizations must also document their data so that everyone understands what it represents.
-
-This project includes two governance documentation components.
-
-Data Catalog
-
-The data catalog describes the structure of the dataset and explains what each field represents.
-
-This helps analysts and business users understand the data they are working with.
-
-Business Glossary
-
-The business glossary defines key terms used in the dataset. It ensures that both technical and non technical users share a common understanding of important concepts.
-
-These governance artifacts help improve transparency, accountability, and trust in organizational data.
-
-Technologies Used
-
-This project was developed using the following tools:
-
-SQLite for storing the dataset
-
-SQL for data quality analysis
-
-Python for automation
-
-Power BI for data visualization
-
-GitHub for project documentation and version control
-
-Key Outcomes
-
-This project demonstrates several important data governance capabilities:
-
-Monitoring data quality using structured validation rules
-
-Identifying potential data issues in healthcare datasets
-
-Automating data quality checks using Python
-
-Documenting datasets through metadata and governance artifacts
-
-Visualizing governance metrics through dashboards
-
-Future Improvements
-
-Possible future enhancements for this project include:
-
-Expanding the number of data quality validation rules
-
-Creating more advanced monitoring dashboards
-
-Visualizing data lineage to show how data flows through systems
-
-Implementing continuous data quality monitoring pipelines
-
-Author
-
-Kayode Alatise
-Data Analyst | Data Governance | Business Intelligence | Data Scientist
