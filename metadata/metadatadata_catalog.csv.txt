@@ -1,0 +1,15 @@
+table_name,column_name,data_type,description
+appointments,PatientId,INTEGER,Unique patient identifier
+appointments,AppointmentID,INTEGER,Unique appointment identifier
+appointments,Gender,TEXT,Patient gender
+appointments,ScheduledDay,TEXT,Date the appointment was scheduled
+appointments,AppointmentDay,TEXT,Actual appointment date
+appointments,Age,INTEGER,Patient age
+appointments,Neighbourhood,TEXT,Patient neighbourhood
+appointments,Scholarship,INTEGER,Whether patient is enrolled in welfare program
+appointments,Hypertension,INTEGER,Whether patient has hypertension
+appointments,Diabetes,INTEGER,Whether patient has diabetes
+appointments,Alcoholism,INTEGER,Whether patient has alcoholism history
+appointments,Handcap,INTEGER,Patient disability indicator
+appointments,SMS_received,INTEGER,Whether SMS reminder was sent
+appointments,No-show,TEXT,Whether patient missed the appointment
