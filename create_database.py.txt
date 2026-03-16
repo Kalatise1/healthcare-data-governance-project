@@ -1,0 +1,15 @@
+import pandas as pd
+import sqlite3
+
+# Load dataset
+df = pd.read_csv(r"C:\Users\kalat\Downloads\Github Projects\healthcare-data-governance-project\data\Medical Appointment No Shows.csv")
+
+# Create SQLite database
+conn = sqlite3.connect(r"C:\Users\kalat\Downloads\Github Projects\healthcare-data-governance-project\database\healthcare_governance.db")
+
+# Write data to table
+df.to_sql("appointments", conn, if_exists="replace", index=False)
+
+conn.close()
+
+print("Database created successfully.")

@@ -1,0 +1,27 @@
+import sqlite3
+import pandas as pd
+
+# Connect to SQLite database
+conn = sqlite3.connect(r"C:\Users\kalat\Downloads\Github Projects\healthcare-data-governance-project\database\healthcare_governance.db")
+
+queries = {
+"total_appointments": "SELECT COUNT(*) FROM appointments",
+"missing_patient_ids": "SELECT COUNT(*) FROM appointments WHERE PatientId IS NULL",
+"invalid_age_records": "SELECT COUNT(*) FROM appointments WHERE Age < 0 OR Age > 120",
+"future_appointments": "SELECT COUNT(*) FROM appointments WHERE AppointmentDay > DATE('now')"
+}
+
+results = []
+
+for metric, query in queries.items():
+    value = pd.read_sql_query(query, conn).iloc[0,0]
+    results.append({"metric": metric, "value": value})
+
+df = pd.DataFrame(results)
+
+# Save governance metrics
+df.to_csv(r"C:\Users\temit\Downloads\Github Projects\healthcare-data-governance-project\dashboards\dq_metrics_snapshot.csv", index=False)
+
+conn.close()
+
+print("Data Quality checks completed successfully.")
