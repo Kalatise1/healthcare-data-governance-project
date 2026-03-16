@@ -1,0 +1,26 @@
+--Total Appointments
+SELECT COUNT(*) AS total_appointments
+FROM appointments;
+
+--Missing Patient IDs
+SELECT COUNT(*) AS missing_patient_ids
+FROM appointments
+WHERE PatientId IS NULL;
+
+--Invalid Age Values
+SELECT COUNT(*) AS invalid_age_records
+FROM appointments
+WHERE Age < 0 OR Age > 120;
+
+--Future Appointment Dates
+SELECT COUNT(*) AS future_appointments
+FROM appointments
+WHERE AppointmentDay > DATE('now');
+
+--Duplicate Appointment IDs
+SELECT AppointmentID, COUNT(*)
+FROM appointments
+GROUP BY AppointmentID
+HAVING COUNT(*) > 1;
+
+--
